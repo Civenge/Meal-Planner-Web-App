@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+</head>
+<body>
+    <h1>Welcome to the Meal Planner</h1>
+
+    <form action="{{ url_for('search') }}" method="post">
+        <label for="ingredients">Enter ingredients (comma-separated):</label>
+        <input type="text" name="ingredients" required>
+
+        <label for="excluded_ingredients">Enter excluded ingredients (comma-separated):</label>
+        <input type="text" name="excluded_ingredients">
+
+        <label for="num_recipes">Enter the number of recipes (1 to 20):</label>
+        <input type="number" name="num_recipes" min="1" max="20" required>
+
+        <button type="submit">Search Recipes</button>
+    </form>
+
+    <!-- Add more HTML content as needed -->
+
+</body>
+</html>

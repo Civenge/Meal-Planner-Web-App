@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    {% if result %}
+        {% for recipe in result %}
+            <div>
+                <h2>{{ recipe["recipe_name"] }}</h2>
+                <p>URL: <a href="{{ recipe['recipe_url'] }}" target="_blank">{{ recipe['recipe_url'] }}</a></p>
+
+                <h3>Ingredients:</h3>
+                <ul>
+                    {% for ingredient in recipe["ingredients"] %}
+                        <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
